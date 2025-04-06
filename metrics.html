@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Health Metrics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://media.istockphoto.com/id/1162300984/photo/abstract-technology-background-of-healthcare-data-processing-concept-illustration.jpg?s=612x612&w=0&k=20&c=eaeqYAt7FVx6isqV72My1u6IVkI9vvJ0dYcYVvP9eYo=') no-repeat center center/cover;
+            background-attachment: fixed;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: -1;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff4081, #0073e6);
+            color: white;
+            padding: 20px 50px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo img {
+            height: 100px;
+            margin-left: 50px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+            margin-right: 100px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffeb3b;
+        }
+
+        /* Health Metrics Section */
+        .metrics-container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #e1f5fe, #f3e5f5);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        h2 {
+            font-size: 36px;
+            color: #ff4081;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .metric {
+            display: inline-block;
+            width: 250px;
+            margin: 20px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .metric:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .metric h3 {
+            font-size: 24px;
+            color: #0073e6;
+            text-shadow: 0 0 8px rgba(0, 0, 255, 0.6);
+        }
+
+        .metric p {
+            font-size: 20px;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .metric span {
+            font-size: 28px;
+            font-weight: 600;
+            color: #ff4081;
+        }
+
+        /* Button Styles */
+        button {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #ff4081, #0073e6);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #0073e6, #ff4081);
+            transform: translateY(-5px);
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .metric {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            footer {
+                position: relative;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="https://example.com/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="mh6.html">Metrics</a></li>
+                <li><a href="#settings">Settings</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Health Metrics Section -->
+    <section id="metrics" class="metrics-container">
+        <h2> Health Metrics</h2>
+        <div class="metric">
+            <h3>Heart Rate</h3>
+            <p>Your current heart rate is: <span id="heart-rate">--</span> bpm</p>
+        </div>
+        <div class="metric">
+            <h3>Steps</h3>
+            <p>Steps today: <span id="steps">--</span> steps</p>
+        </div>
+        <div class="metric">
+            <h3>Calories Burned</h3>
+            <p>Calories burned today: <span id="calories">--</span> kcal</p>
+        </div>
+        <div class="metric">
+            <h3>Distance Covered</h3>
+            <p>Distance covered today: <span id="distance">--</span> km</p>
+        </div>
+
+        <!-- Button to Sync Data -->
+        <button onclick="syncData()">Sync Data</button>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Fantasy Health Metrics Dashboard &copy; 2024 | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript for Interactive Features -->
+    <script>
+        function syncData() {
+            alert('device not connected');
+            // This is where you'd sync or update the data dynamically
+            // document.getElementById('heart-rate').innerText = Math.floor(Math.random() * (100 - 60 + 1)) + 60; // Random heart rate
+            // document.getElementById('steps').innerText = Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000; // Random steps
+            // document.getElementById('calories').innerText = Math.floor(Math.random() * (500 - 100 + 1)) + 100; // Random calories
+            // document.getElementById('distance').innerText = (Math.random() * (10 - 2) + 2).toFixed(1); // Random distance
+            // alert('Data Synced!');
+        }
+    </script>
+</body>
+
+</html>

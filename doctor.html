@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard - Fantasy Health Platform</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2c3e50, #4ca1af, #f5af19);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .dashboard {
+            width: 90%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #ffd700;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .action-btn {
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .view-patients { background: #007bff; }
+        .view-patients:hover { background: #0056b3; }
+
+        .schedule-appointments { background: #28a745; }
+        .schedule-appointments:hover { background: #218838; }
+
+        .emergency-cases { background: red; }
+        .emergency-cases:hover { background: darkred; }
+
+        .logout-btn {
+            margin-top: 20px;
+            background: #ff5722;
+        }
+
+        .logout-btn:hover {
+            background: #e64a19;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard">
+        <h2>Welcome, Dr. <span id="doctorName">[DoctorID]</span> 👨‍⚕️</h2>
+        <p>Manage your patients, appointments, and emergency cases.</p>
+
+        <div class="action-buttons">
+            <button class="action-btn view-patients" onclick="viewPatients()">🗂 View Patient Records</button>
+            <button class="action-btn schedule-appointments" onclick="scheduleAppointments()">📅 Schedule Appointments</button>
+            <button class="action-btn emergency-cases" onclick="accessEmergencyCases()">🚨 Emergency Cases</button>
+        </div>
+
+        <button class="action-btn logout-btn" onclick="logout()">🚪 Logout</button>
+    </div>
+
+    <script>
+        // Simulating logged-in doctor
+        document.getElementById('doctorName').innerText = localStorage.getItem('doctorID') || "Unknown";
+
+        function viewPatients() {
+            alert("Opening Patient Records...");
+            // Redirect or Load Patient Data Page
+            window.location.href = "medicalrecords.html";
+
+        }
+
+        function scheduleAppointments() {
+            alert("Opening Appointment Scheduler...");
+            
+            // Redirect to Scheduling Page
+            window.location.href = "appointment.html";
+
+        }
+
+        function accessEmergencyCases() {
+            alert("Accessing Emergency Cases...");
+            // Redirect or Load Emergency Cases
+        }
+
+        function logout() {
+            localStorage.removeItem('doctorID'); // Clear doctor data
+            alert("Logging out...");
+            window.location.href = "emergency.html"; // Redirect to login page
+        }
+    </script>
+
+</body>
+</html>

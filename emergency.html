@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Login - Fantasy Health Platform</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .section {
+            width: 90%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #ffd700;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-form input {
+            width: 80%;
+            max-width: 400px;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .login-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Biometric Authentication */
+        .biometric-options {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .biometric-btn {
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .fingerprint-btn {
+            background: #007bff;
+        }
+
+        .fingerprint-btn:hover {
+            background: #0056b3;
+        }
+
+        .faceid-btn {
+            background: #ff5722;
+        }
+
+        .faceid-btn:hover {
+            background: #e64a19;
+        }
+
+        /* Access Patient Data Button */
+        .access-btn {
+            margin-top: 20px;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            background: red;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .access-btn:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="section">
+        <h2>Doctor Login</h2>
+        <form class="login-form" onsubmit="event.preventDefault(); authenticateDoctor();">
+            <input type="text" id="doctorID" placeholder="Doctor ID" required>
+            <input type="password" id="password" placeholder="Password" required>
+        </form>
+
+        <div class="biometric-options">
+            <button class="biometric-btn fingerprint-btn" onclick="authenticateBiometric('fingerprint')">🔒 Fingerprint</button>
+            <button class="biometric-btn faceid-btn" onclick="authenticateBiometric('faceid')">📷 Face ID</button>
+        </div>
+
+        <button class="access-btn" onclick="authenticateDoctor()">Access Patient Data</button>
+    </section>
+
+    <script>
+        function authenticateDoctor() {
+            let doctorID = document.getElementById("doctorID").value;
+            let password = document.getElementById("password").value;
+
+            if (doctorID === "" || password === "") {
+                alert("Please enter Doctor ID and Password.");
+                return;
+            }
+
+            // Simulating authentication (Replace with real API)
+            if (doctorID === "doctor123" && password === "Ayush123") {
+                alert("Login Successful!");
+                localStorage.setItem("doctorID", doctorID); // Store Doctor ID
+                window.location.href = "doctor.html"; // Redirect to Doctor Dashboard
+            } else {
+                alert("Invalid credentials. Please try again.");
+            }
+        }
+
+        function authenticateBiometric(type) {
+            if (type === "fingerprint") {
+                alert("Fingerprint authentication successful!");
+            } else if (type === "faceid") {
+                alert("Face ID authentication successful!");
+            }
+
+            localStorage.setItem("doctorID", "doctor123"); // Simulate Doctor ID storage
+            window.location.href = "doctor.html"; // Redirect to Doctor Dashboard
+        }
+    </script>
+
+</body>
+</html>

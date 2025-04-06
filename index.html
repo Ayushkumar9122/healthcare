@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            background: #eef2f3;
+            transition: 0.3s ease-in-out;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: rgba(44, 62, 80, 0.9);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+
+        .sidebar .logo {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+            color: #1ABC9C;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            padding: 14px;
+            margin: 8px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .sidebar ul li:hover {
+            background: #1ABC9C;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            font-size: 17px;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 18px 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease-in-out;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2C3E50;
+        }
+
+        .header .toggle-btn {
+            background: linear-gradient(135deg, #1ABC9C, #16A085);
+            border: none;
+            padding: 12px 22px;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .header .toggle-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background: #2C3E50;
+            color: white;
+        }
+
+        .dark-mode .header {
+            background: #34495E;
+            color: white;
+        }
+
+        .dark-mode .sidebar {
+            background: rgba(31, 42, 56, 0.9);
+        }
+
+        .dark-mode .toggle-btn {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+        }
+
+        /* Smooth Transition for Dark Mode */
+        .dark-mode .header,
+        .dark-mode .sidebar,
+        .dark-mode .toggle-btn {
+            transition: 0.3s ease-in-out;
+        }
+
+        /* Mobile Responsive Design */
+        @media screen and (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                text-align: center;
+                padding: 15px;
+                border-radius: 0;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">Healthcare Dashboard</div>
+        <ul>
+            <li><a href="main.html">Login</a></li>
+            <li><a href="main.html">Medical Records</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <h1>Welcome, User</h1>
+            <button class="toggle-btn">Toggle Dark Mode</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+       
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleBtn = document.querySelector(".toggle-btn");
+            toggleBtn.addEventListener("click", function () {
+                document.body.classList.toggle("dark-mode");
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Records - Fantasy Health Platform</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: gradient-bg 10s infinite alternate;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradient-bg {
+            0% { background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b); }
+            100% { background: linear-gradient(135deg, #2c3e50, #4ca1af, #f5af19); }
+        }
+
+        .section {
+            width: 90%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: 700;
+            font-size: 2rem;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .records-table {
+            width: 100%;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .records-table table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .records-table th, .records-table td {
+            padding: 12px 15px;
+            font-size: 1rem;
+        }
+
+        .records-table th {
+            background: rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+        }
+
+        .records-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <section class="section">
+        <h2>Your Magical Medical Records</h2>
+        <div class="records-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Record</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-08-15</td>
+                        <td>Blood Test</td>
+                        <td>Hemoglobin: 13.5 g/dL, WBC: 6,000 /µL, Glucose: 90 mg/dL</td>
+                    </tr>
+                    <tr>
+                        <td>2024-10-01</td>
+                        <td>Heart Checkup</td>
+                        <td>ECG Normal, BP: 120/80 mmHg, Cholesterol: 180 mg/dL</td>
+                    </tr>
+                    <tr>
+                        <td>2024-11-05</td>
+                        <td>Consultation</td>
+                        <td>Complaints of fatigue, advised multivitamins & lifestyle changes</td>
+                    </tr>
+                    <tr>
+                        <td>2024-11-06</td>
+                        <td>General Checkup</td>
+                        <td>Vitals stable, BMI: 22.4, no abnormalities</td>
+                    </tr>
+                    <tr>
+                        <td>2024-11-07</td>
+                        <td>Blood Test</td>
+                        <td>Vitamin D: 15 ng/mL (deficient), prescribed D3 supplements</td>
+                    </tr>
+                    <tr>
+                        <td>2024-11-08</td>
+                        <td>X-Ray</td>
+                        <td>Mild scoliosis observed in lumbar spine</td>
+                    </tr>
+                    <tr>
+                        <td>2024-11-09</td>
+                        <td>MRI Scan</td>
+                        <td>Brain scan clear; minor sinus inflammation</td>
+                    </tr>
+                    <tr>
+                        <td>2024-11-10</td>
+                        <td>Vaccination</td>
+                        <td>Influenza vaccine administered, no side effects</td>
+                    </tr>
+                    <tr>
+                        <td>2024-11-11</td>
+                        <td>Physiotherapy</td>
+                        <td>Completed 5 sessions for back pain; improved mobility</td>
+                    </tr>
+                    <tr>
+                        <td>2024-11-12</td>
+                        <td>Dental Cleaning</td>
+                        <td>Scaling done; early gingivitis treated</td>
+                    </tr>
+                    <tr>
+                        <td>2024-11-13</td>
+                        <td>Eye Examination</td>
+                        <td>Prescribed -1.25D lenses both eyes; no other issues</td>
+                    </tr>
+                    <tr>
+                        <td>2024-11-14</td>
+                        <td>Skin Treatment</td>
+                        <td>Mild acne treated with Clindamycin gel</td>
+                    </tr>
+                    <tr>
+                        <td>2024-11-15</td>
+                        <td>Cardiology Consultation</td>
+                        <td>LDL: 160 mg/dL; advised diet change and 30-min walks</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</body>
+</html>
